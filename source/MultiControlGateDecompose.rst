@@ -12,12 +12,15 @@
 
 1. 普通的多控门分解算法
 该算法的实现过程如下流程图所示：
+
 .. figure:: ./images/multiControlGateDecompose_1.png
    :alt:
 
 
 对应的接口如下：
-.. code-block:: c++
+
+.. code-block:: c
+
     /**
      * @brief Decompose multiple control QGate
      * @ingroup Utilities
@@ -28,13 +31,12 @@
      */
     void decompose_multiple_control_qgate(QProg& prog,  QuantumMachine *quantum_machine, const std::string& config_data = CONFIG_PATH);
     void decompose_multiple_control_qgate( QCircuit& cir, QuantumMachine *quantum_machine, const std::string& config_data = CONFIG_PATH);
-
-
+    
 使用介绍
 >>>>>>>>>>>>>>>>
 ----
 
-通过调用decompose_multiple_control_qgate接口，可将目标量子线路中的多控门转换为指定的基础逻辑门组合，其中基础逻辑门包括基础单门和基础单门，通过配置文件给出。该接口需要3个参数，
+    通过调用decompose_multiple_control_qgate接口，可将目标量子线路中的多控门转换为指定的基础逻辑门组合，其中基础逻辑门包括基础单门和基础单门，通过配置文件给出。该接口需要3个参数，
 第一个是目标量子线路或者量子程序，第二个是目标量子线路或者量子程序对应的量子虚拟机，第三个参数用于指定配置信息，配置信息可以json文件或者json字符串，配置文件中指定了基础逻辑门信息。
 
 实例
